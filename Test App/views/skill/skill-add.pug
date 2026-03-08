@@ -1,0 +1,20 @@
+extends ../common/layout
+
+block layout-content
+  h1 Add Skill
+
+  form(method="POST" action="/admin/skills/add/submit")
+
+    div
+      label Name
+      input(type="text" name="name")
+
+    div
+      label Level
+      input(type="text" name="level")
+
+    div
+      label Category
+      input(type="text" name="category")
+
+    button(type="submit") Add Skill

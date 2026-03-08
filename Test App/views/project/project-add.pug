@@ -1,0 +1,24 @@
+extends ../common/layout
+
+block layout-content
+  h1 Add Project
+
+  form(method="POST" action="/admin/projects/add/submit")
+
+    div
+      label Title
+      input(type="text" name="title" required)
+
+    div
+      label Description
+      input(type="text" name="description")
+
+    div
+      label Tech Stack (comma separated)
+      input(type="text" name="techStack")
+
+    div
+      label Year
+      input(type="number" name="year")
+
+    button(type="submit") Add Project

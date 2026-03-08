@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Vigneswaran Portfolio 
+    link(rel="stylesheet", href="/style.css")
+    header#header
+      h2#site-name 
+        a(href="/") Vigneswaran Portfolio 
+      if user
+        nav(aria-label="User menu")
+          ul
+            li: a(href="/admin/dashboard") Dashboard
+            li: a(href="/admin/projects") Projects
+            li: a(href="/admin/skills") Skills
+            li: a(href="/logout") Logout
+      else
+        a(href="/login") Login
+    main#main
+      block layout-content
+    footer#footer
+      div &copy; Copyright Vigneswaran Saravanan, 2026.

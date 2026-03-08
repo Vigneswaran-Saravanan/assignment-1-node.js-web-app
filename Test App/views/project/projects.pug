@@ -1,0 +1,26 @@
+extends ../common/layout
+
+block layout-content
+  h1 Projects
+
+  a.add-btn(href="/admin/projects/add") Add Project
+
+  table(border="1")
+    tr
+      th Title
+      th Description
+      th Tech Stack
+      th Year
+      th Actions
+
+    each project in projects
+      tr
+        td #{project.title}
+        td #{project.description}
+        td #{project.techStack.join(", ")}
+        td #{project.year}
+
+        td
+          a.btn-edit(href=`/admin/projects/edit?id=${project._id}`) Edit
+         
+          a.btn-delete(href=`/admin/projects/delete?id=${project._id}`) Delete

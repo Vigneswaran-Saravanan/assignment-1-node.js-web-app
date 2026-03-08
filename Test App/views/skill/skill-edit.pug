@@ -1,0 +1,22 @@
+extends ../common/layout
+
+block layout-content
+  h1 Edit Skill
+
+  form(method="POST" action="/admin/skills/edit/submit")
+
+    input(type="hidden" name="id" value=skill._id)
+
+    div
+      label Name
+      input(type="text" name="name" value=skill.name)
+
+    div
+      label Level
+      input(type="text" name="level" value=skill.level)
+
+    div
+      label Category
+      input(type="text" name="category" value=skill.category)
+
+    button(type="submit") Update Skill

@@ -1,0 +1,16 @@
+extends ../common/layout
+
+block layout-content
+  .main-content
+    h1.page-title Welcome, #{user.username}!
+
+    h2 API Endpoints
+
+    p Click below to view your API data:
+
+    ul
+      li
+        a.btn-link(href="/admin/projects/api" target="_blank") View Projects API (JSON)
+
+      li
+        a.btn-link(href="/admin/skills/api" target="_blank") View Skills API (JSON)
