@@ -3,10 +3,8 @@ import mongoose from "mongoose";
 
 // Set Up Schema and model
 const SkillSchema = new mongoose.Schema({
-    name : String,
-    level : String,
+    name: String,
     category: String
-
 });
 
 const Skill = mongoose.model("Skill", SkillSchema);
@@ -29,28 +27,9 @@ async function initializeSkills(){
     const skillList = [
         {
             name: "HTML",
-            level: "Advance",
             category: "Frontend"
-        },
-
-        {
-            name: "CSS",
-            level: "Advance",
-            category: "Frontend"
-
-        },
-        {
-            name:"JavaScript",
-            level:"Advance",
-            category:"Frontend"
-        },
-        {
-            name:"Node.js",
-            level:"Beginner",
-            category:"Backend"
-        },
+        } 
     ];
-
     await Skill.insertMany(skillList)
  }
 
