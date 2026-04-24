@@ -3,6 +3,7 @@ import express, { Router } from "express";
 import path from "path"; 
 import sessions from "express-session";
 import { connect } from "./db.js";
+import cors from "cors";
 
 //Routers
 import userRouter from "./components/user/routes.js";
@@ -18,6 +19,8 @@ const __dirname = import.meta.dirname;
 //set up the Express app
 const app = express();
 const port = process.env.PORT || "8888";
+
+app.use(cors());
 
 //set up application template engine
 app.set("views", path.join(__dirname, "views")); 
@@ -55,6 +58,10 @@ app.use("/user", (request, response, next) => {
 });
 
 app.use("/admin", (req, res, next) => {
+  if (req.path.includes("/api")) {
+    return next();
+  }
+
   if (req.session.loggedIn) {
     app.locals.user = req.session.user;
     next();
