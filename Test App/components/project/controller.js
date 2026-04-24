@@ -17,7 +17,7 @@ const addProjectForm = (req, res) => {
 
 // Add project
 const addProject = async (req, res) => {
-  const { title, description, techStack, year } = req.body;
+  const { title, description, techStack, year, liveLink } = req.body;
 
   await projectModel.addProject({
     title,
@@ -37,7 +37,7 @@ const editProjectForm = async (req, res) => {
 
 // Update project
 const editProject = async (req, res) => {
-  const { id, title, description, techStack, year } = req.body;
+  const { id, title, description, techStack, year, liveLink} = req.body;
 
   await projectModel.editProject(id, {
     title,

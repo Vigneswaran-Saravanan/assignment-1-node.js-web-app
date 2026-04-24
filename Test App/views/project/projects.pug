@@ -11,6 +11,7 @@ block layout-content
       th Description
       th Tech Stack
       th Year
+      th Live Dem
       th Actions
 
     each project in projects
@@ -19,6 +20,11 @@ block layout-content
         td #{project.description}
         td #{project.techStack.join(", ")}
         td #{project.year}
+        td
+          if project.liveLink
+            a(href=project.liveLink target="_blank") Live Demo
+          else
+            | No Link
 
         td
           a.btn-edit(href=`/admin/projects/edit?id=${project._id}`) Edit

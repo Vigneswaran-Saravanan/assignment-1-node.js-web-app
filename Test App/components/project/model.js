@@ -6,7 +6,8 @@ const ProjectSchema = new mongoose.Schema({
   title: String,
   description: String,
   techStack: [String], 
-  year: Number
+  year: Number,
+  liveLink: String
 });
 
 const Project = mongoose.model("Project", ProjectSchema);
