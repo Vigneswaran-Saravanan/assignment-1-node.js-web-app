@@ -23,7 +23,8 @@ const addProject = async (req, res) => {
     title,
     description,
     techStack: techStack.split(",").map(t => t.trim()),
-    year: parseInt(year)
+    year: parseInt(year),
+    liveLink
   });
 
   res.redirect("/admin/projects");
@@ -43,7 +44,8 @@ const editProject = async (req, res) => {
     title,
     description,
     techStack: techStack.split(",").map(t => t.trim()),
-    year: parseInt(year)
+    year: parseInt(year),
+    liveLink
   });
 
   res.redirect("/admin/projects");
